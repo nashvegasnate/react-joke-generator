@@ -20,9 +20,9 @@ function App() {
   const handleClick = () => {
     if (showPunchline) {
       getJoke()
-        .then((jokes) => {
-          setAllJokes(jokes);
-          setSingleJoke(jokes);
+        .then((setup) => {
+          setAllJokes(setup);
+          setSingleJoke(setup);
         });
       setShowPunchline(false);
       setSingleJoke(allJokes);
@@ -38,7 +38,7 @@ function App() {
         {showPunchline ? 'Get Another Joke' : 'Get a Joke' }
       </Button>
       }
-      <h1>{singleJoke.joke}</h1>
+      <h1>{singleJoke.setup}</h1>
       <p>{showPunchline && singleJoke.punchline}</p>
       {showPunchline ? ''
         : <div>
