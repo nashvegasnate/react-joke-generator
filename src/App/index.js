@@ -1,11 +1,6 @@
 import React, { useState } from 'react';
-import {
-  Button,
-  Popover,
-  PopoverHeader,
-  PopoverBody
-} from 'reactstrap';
 import './App.scss';
+import { Button } from 'reactstrap';
 import getJoke from '../helpers/data/jokeData';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -13,9 +8,6 @@ function App() {
   const [allJokes, setAllJokes] = useState([]);
   const [singleJoke, setSingleJoke] = useState({});
   const [showPunchline, setShowPunchline] = useState(false);
-  const [popoverOpen, setPopoverOpen] = useState(false);
-
-  const toggle = () => setPopoverOpen(!popoverOpen);
 
   const handleClick = () => {
     if (showPunchline) {
@@ -33,34 +25,13 @@ function App() {
 
   return (
     <div className='App'>
-      {popoverOpen ? ''
-        : <Button color="info" onClick={handleClick}>
-        {showPunchline ? 'Get Another Joke' : 'Get a Joke' }
+      <h2>Joke Generator</h2>
+      <h2>{singleJoke.setup}</h2>
+      {<Button color="info" onClick={handleClick}>
+        {showPunchline ? 'Get Another Joke' : 'Answer' }
       </Button>
       }
-      <h1>{singleJoke.setup}</h1>
-      <p>{showPunchline && singleJoke.punchline}</p>
-      {showPunchline ? ''
-        : <div>
-      <Button id="Popover1" type="button">
-        Get Punchline
-      </Button>
-      <Popover
-        placement="bottom"
-        isOpen={popoverOpen}
-        target="Popover1"
-        toggle={toggle}
-        trigger="hover"
-        >
-        <PopoverHeader>Possible Answers</PopoverHeader>
-        <PopoverBody>
-          <ul>
-            {singleJoke.punchlines?.map((pa, i) => <li key={i}>{pa}</li>)}
-        </ul>
-        </PopoverBody>
-      </Popover>
-      </div>
-      }
+      <h5>{showPunchline && singleJoke.punchline}</h5>
     </div>
   );
 }
