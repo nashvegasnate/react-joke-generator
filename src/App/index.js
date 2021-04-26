@@ -26,16 +26,23 @@ function App() {
 
   return (
     <div className='App'>
-      <Jumbotron style={{ backgroundImage: `url(${jokeIcon})`, backgroundSize: 'cover' }}>
-        <h1 className="display-3">Joke Generator</h1>
-        <p className="lead">{singleJoke.setup}</p>
+      <Jumbotron style={{
+        backgroundImage: `url(${jokeIcon})`,
+        backgroundSize: 'cover',
+        color: '#DB504A',
+        position: 'absolute',
+        width: '100%',
+        height: '50em'
+      }}>
+        <h4 className="display-3">Joke Generator</h4>
+        <h2 className="lead">{singleJoke.setup}</h2>
         <hr className="my-2" />
-        <p>{showPunchline && singleJoke.punchline}</p>
-        <p className="lead">
+        <h2>{showPunchline && singleJoke.punchline}</h2>
+        <h2 className="lead">
         <Button color="info" onClick={handleClick}>
         {showPunchline ? 'Get A Joke' : 'Answer' }
       </Button>
-        </p>
+        </h2>
       </Jumbotron>
     </div>
   );
