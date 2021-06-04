@@ -19,7 +19,9 @@ As a user, a jumbotron appears with a button saying "Get A Joke." Once that butt
 
 ## Contributor
 Nathan Keith
+
 email: NashvegasNate@gmail.com
+
 GitHub: https://github.com/nashvegasnate
 
 
