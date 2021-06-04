@@ -31,8 +31,13 @@ function App() {
         backgroundSize: 'cover',
         color: '#DB504A',
         position: 'absolute',
-        width: '100%',
-        height: '50em'
+        width: '75%',
+        height: '100%',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: '-1',
+        marginBottom: '5em'
       }}>
         <h4 className="display-3">Joke Generator</h4>
         <h2 className="lead">{singleJoke.setup}</h2>
